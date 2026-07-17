@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "PaperLens \u2014 Highlight to Explain",
+  "version": "0.1.0",
+  "description": "Highlight text in a research paper to get a quick visual explainer.",
+  "host_permissions": ["*://*/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["videos/*.mp4"],
+      "matches": ["*://*/*"]
+    }
+  ],
+  "action": {
+    "default_title": "PaperLens"
+  }
+}

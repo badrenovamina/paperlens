@@ -1,0 +1,86 @@
+/* content.css */
+
+#paperlens-trigger-btn {
+  position: absolute;
+  z-index: 2147483647;
+  background: #1a1a2e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+#paperlens-trigger-btn:hover {
+  background: #272750;
+}
+
+#paperlens-panel {
+  position: absolute;
+  z-index: 2147483647;
+  width: 340px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+.paperlens-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #1a1a2e;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.paperlens-close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.paperlens-panel-body {
+  padding: 14px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.paperlens-loading {
+  font-size: 13px;
+  color: #555;
+}
+
+.paperlens-concept-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 8px;
+}
+
+.paperlens-video {
+  width: 100%;
+  border-radius: 6px;
+  background: #000;
+}
+
+.paperlens-text-fallback {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+}
+
+.paperlens-error {
+  font-size: 13px;
+  color: #b00020;
+}
