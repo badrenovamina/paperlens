@@ -36,6 +36,19 @@ const CONCEPT_LIBRARY = [
       'material somatic cells spindle fibers centromere',
   },
   {
+    // "meiosis" shares real vocabulary with "mitosis" (chromosomes,
+    // division), which is why the description below leans on the terms
+    // that are specific to meiosis (homologous, haploid, gametes, crossing
+    // over) rather than the ones both concepts have in common.
+    keyword: 'meiosis',
+    concept: 'Meiosis I vs Meiosis II',
+    videoUrl: chrome.runtime.getURL('videos/meiosis.mp4'),
+    description:
+      'meiosis homologous chromosome pairs haploid diploid reduction division ' +
+      'gametes sperm egg independent assortment crossing over genetic variation ' +
+      'sister chromatids synapsis tetrad non-identical',
+  },
+  {
     keyword: 'transcription',
     concept: 'Transcription (DNA to mRNA)',
     videoUrl: chrome.runtime.getURL('videos/transcription.mp4'),
