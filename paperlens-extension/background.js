@@ -67,7 +67,7 @@ const CONCEPT_LIBRARY = [
     description:
       'transcription DNA RNA polymerase messenger RNA mRNA gene expression ' +
       'nucleotides template strand coding strand transcribing genetic code ' +
-      'protein synthesis nucleus ribosome translation',
+      'protein synthesis nucleus ribosome',
   },
   {
     // Deliberately not "membrane" as the literal keyword — Osmosis's own
@@ -92,6 +92,46 @@ const CONCEPT_LIBRARY = [
       'inner membrane cristae folds matrix aerobic respiration ATP synthesis ' +
       'oxidative phosphorylation organelle energy production cellular respiration',
   },
+  {
+    keyword: 'replication',
+    concept: 'DNA Replication',
+    videoUrl: chrome.runtime.getURL('videos/dna_replication.mp4'),
+    description:
+      'DNA replication semi-conservative helicase leading strand lagging ' +
+      'strand Okazaki fragments ligase origin of replication daughter DNA ' +
+      'molecule genome duplication S phase double helix unwind original strand',
+  },
+  {
+    // Transcription's own description used to end with "translation" —
+    // trimmed once this entry existed, so the two don't share that word.
+    keyword: 'translation',
+    concept: 'Translation (mRNA to Protein)',
+    videoUrl: chrome.runtime.getURL('videos/translation.mp4'),
+    description:
+      'translation ribosome tRNA transfer RNA codon anticodon amino acid ' +
+      'polypeptide protein synthesis start codon stop codon genetic code ' +
+      'reading frame elongation',
+  },
+  {
+    keyword: 'glycolysis',
+    concept: 'Glycolysis',
+    videoUrl: chrome.runtime.getURL('videos/glycolysis.mp4'),
+    description:
+      'glycolysis glucose pyruvate cytoplasm cellular respiration energy ' +
+      'investment phase net ATP NADH anaerobic enzymatic steps breakdown ' +
+      'carbon metabolism',
+  },
+  {
+    // "synthase" (not "synthesis") is specific to this enzyme and doesn't
+    // collide with Mitochondria's description, which says "ATP synthesis".
+    keyword: 'synthase',
+    concept: 'ATP Synthase / Chemiosmosis',
+    videoUrl: chrome.runtime.getURL('videos/atp_synthase.mp4'),
+    description:
+      'ATP synthase chemiosmosis proton gradient hydrogen ion electron ' +
+      'transport chain rotor turbine ADP phosphate inner mitochondrial ' +
+      'membrane oxidative phosphorylation',
+  },
 ];
 
 // Below this cosine score we treat it as "no real match" and fall back to
@@ -105,6 +145,11 @@ const STOPWORDS = new Set([
   'have', 'in', 'is', 'it', 'its', 'of', 'on', 'or', 'that', 'the', 'this',
   'to', 'was', 'were', 'will', 'with', 'which', 'their', 'than', 'into',
   'across', 'over', 'also',
+  // "cell"/"cells" are so generic across biology concepts that they were
+  // acting as a near-meaningless tiebreaker — a highlight about DNA
+  // replication (not yet in the library) matched to Mitosis purely
+  // because both texts said "cell(s)" and nothing else overlapped.
+  'cell', 'cells',
 ]);
 
 // Crude suffix-stripping so "cells"/"cell", "chromosomes"/"chromosome",
