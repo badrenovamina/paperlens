@@ -26,6 +26,18 @@ const CONCEPT_LIBRARY = [
       'equilibrium concentration gradient hypertonic hypotonic isotonic solvent ' +
       'solute permeable membrane cell water potential',
   },
+    {
+    // "diffusion" alone would risk colliding with Osmosis's own
+    // description (which already says "diffusion"), so the keyword is
+    // "facilitated" specifically, not the shared word.
+    keyword: 'facilitated',
+    concept: 'Facilitated Diffusion',
+    videoUrl: chrome.runtime.getURL('videos/facilitated_diffusion.mp4'),
+    description:
+      'facilitated diffusion transport protein channel protein carrier ' +
+      'protein glucose molecule passive transport concentration gradient ' +
+      'specific molecule polar charged no ATP required membrane crossing',
+  },
   {
     keyword: 'mitosis',
     concept: 'Mitosis',
