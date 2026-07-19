@@ -5,8 +5,8 @@
 // Swap the mock in background.js for a real backend call when ready.
 
 (function () {
-  const BUTTON_ID = 'paperlens-trigger-btn';
-  const PANEL_ID = 'paperlens-panel';
+  const BUTTON_ID = 'veasy-trigger-btn';
+  const PANEL_ID = 'veasy-panel';
   const MIN_SELECTION_LENGTH = 12;
 
   let currentButton = null;
@@ -68,16 +68,16 @@
     panel.style.left = `${window.scrollX + rect.left}px`;
 
     panel.innerHTML = `
-      <div class="paperlens-panel-header">
-        <span>PaperLens</span>
-        <button class="paperlens-close-btn" aria-label="Close">\u2715</button>
+      <div class="veasy-panel-header">
+        <span>Veasy</span>
+        <button class="veasy-close-btn" aria-label="Close">\u2715</button>
       </div>
-      <div class="paperlens-panel-body">
-        <div class="paperlens-loading">Finding the best explanation\u2026</div>
+      <div class="veasy-panel-body">
+        <div class="veasy-loading">Finding the best explanation\u2026</div>
       </div>
     `;
 
-    panel.querySelector('.paperlens-close-btn').addEventListener('click', (e) => {
+    panel.querySelector('.veasy-close-btn').addEventListener('click', (e) => {
       e.stopPropagation();
       removePanel();
     });
@@ -91,24 +91,24 @@
   }
 
   function renderResult(panel, result) {
-    const body = panel.querySelector('.paperlens-panel-body');
+    const body = panel.querySelector('.veasy-panel-body');
     if (result.type === 'video') {
       body.innerHTML = `
-        <div class="paperlens-concept-name">${escapeHtml(result.concept)}</div>
-        <video controls autoplay muted src="${result.videoUrl}" class="paperlens-video"></video>
+        <div class="veasy-concept-name">${escapeHtml(result.concept)}</div>
+        <video controls autoplay muted src="${result.videoUrl}" class="veasy-video"></video>
       `;
     } else {
       body.innerHTML = `
-        <div class="paperlens-concept-name">${escapeHtml(result.concept || 'Quick explanation')}</div>
-        <p class="paperlens-text-fallback">${escapeHtml(result.text)}</p>
+        <div class="veasy-concept-name">${escapeHtml(result.concept || 'Quick explanation')}</div>
+        <p class="veasy-text-fallback">${escapeHtml(result.text)}</p>
       `;
     }
   }
 
   function renderError(panel, err) {
-    const body = panel.querySelector('.paperlens-panel-body');
-    body.innerHTML = `<p class="paperlens-error">Couldn't load an explanation right now.</p>`;
-    console.error('[PaperLens]', err);
+    const body = panel.querySelector('.veasy-panel-body');
+    body.innerHTML = `<p class="veasy-error">Couldn't load an explanation right now.</p>`;
+    console.error('[Veasy]', err);
   }
 
   function escapeHtml(str) {
@@ -124,7 +124,7 @@
   function requestExplanation(text) {
     return new Promise((resolve, reject) => {
       chrome.runtime.sendMessage(
-        { type: 'PAPERLENS_GET_EXPLANATION', text },
+        { type: 'VEASY_GET_EXPLANATION', text },
         (response) => {
           if (chrome.runtime.lastError) {
             reject(chrome.runtime.lastError);

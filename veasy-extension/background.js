@@ -229,7 +229,7 @@ function matchConcept(text) {
 }
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message.type !== 'PAPERLENS_GET_EXPLANATION') return;
+  if (message.type !== 'VEASY_GET_EXPLANATION') return;
 
   handleExplanationRequest(message.text)
     .then((result) => sendResponse({ result }))

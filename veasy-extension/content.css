@@ -1,6 +1,6 @@
 /* content.css */
 
-#paperlens-trigger-btn {
+#veasy-trigger-btn {
   position: absolute;
   z-index: 2147483647;
   background: #1a1a2e;
@@ -14,11 +14,11 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
-#paperlens-trigger-btn:hover {
+#veasy-trigger-btn:hover {
   background: #272750;
 }
 
-#paperlens-panel {
+#veasy-panel {
   position: absolute;
   z-index: 2147483647;
   width: 340px;
@@ -29,7 +29,7 @@
   overflow: hidden;
 }
 
-.paperlens-panel-header {
+.veasy-panel-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,7 +40,7 @@
   font-weight: 600;
 }
 
-.paperlens-close-btn {
+.veasy-close-btn {
   background: none;
   border: none;
   color: #fff;
@@ -49,38 +49,38 @@
   line-height: 1;
 }
 
-.paperlens-panel-body {
+.veasy-panel-body {
   padding: 14px;
   max-height: 320px;
   overflow-y: auto;
 }
 
-.paperlens-loading {
+.veasy-loading {
   font-size: 13px;
   color: #555;
 }
 
-.paperlens-concept-name {
+.veasy-concept-name {
   font-size: 13px;
   font-weight: 700;
   color: #1a1a2e;
   margin-bottom: 8px;
 }
 
-.paperlens-video {
+.veasy-video {
   width: 100%;
   border-radius: 6px;
   background: #000;
 }
 
-.paperlens-text-fallback {
+.veasy-text-fallback {
   font-size: 13px;
   line-height: 1.5;
   color: #333;
   margin: 0;
 }
 
-.paperlens-error {
+.veasy-error {
   font-size: 13px;
   color: #b00020;
 }

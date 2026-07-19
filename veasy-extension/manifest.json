@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "PaperLens \u2014 Highlight to Explain",
+  "name": "Veasy \u2014 Highlight to Explain",
   "version": "0.1.0",
   "description": "Highlight text in a research paper to get a quick visual explainer.",
   "host_permissions": ["*://*/*"],
@@ -22,6 +22,6 @@
     }
   ],
   "action": {
-    "default_title": "PaperLens"
+    "default_title": "Veasy"
   }
 }
